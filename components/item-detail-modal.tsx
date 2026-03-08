@@ -1,6 +1,7 @@
 import { formatCurrency } from "@/lib/format";
 import type { Locale } from "@/lib/i18n";
 import type { CatalogItem } from "@/lib/types";
+import { withBasePath } from "@/lib/assets";
 
 import { StatusBadge } from "@/components/status-badge";
 
@@ -49,7 +50,7 @@ export function ItemDetailModal({ locale, item, isInCart, onClose, onAddToCart }
 
         <div className="item-detail-body">
           <div className="item-detail-image-wrap">
-            <img src={item.images[0]} alt={title} className="item-detail-image" />
+            <img src={withBasePath(item.images[0])} alt={title} className="item-detail-image" />
           </div>
 
           <div className="item-detail-content">

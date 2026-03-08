@@ -1,6 +1,7 @@
 import { formatCurrency } from "@/lib/format";
 import type { Locale } from "@/lib/i18n";
 import type { CatalogItem } from "@/lib/types";
+import { withBasePath } from "@/lib/assets";
 
 import { StatusBadge } from "@/components/status-badge";
 
@@ -31,7 +32,7 @@ export function ItemCard({ locale, item, isInCart, onAddToCart, onOpenDetails }:
   return (
     <article className="item-card">
       <button type="button" className="item-image-wrap detail-trigger" onClick={() => onOpenDetails(item)}>
-        <img src={item.images[0]} alt={title} className="item-image" loading="lazy" />
+        <img src={withBasePath(item.images[0])} alt={title} className="item-image" loading="lazy" />
       </button>
 
       <div className="item-content">
