@@ -24,12 +24,21 @@ npm run build
 
 The static output is generated under `out/`.
 
+## GitHub Pages
+
+Workflows are included in `.github/workflows`:
+
+- `ci.yml` for build checks on push/PR
+- `deploy-pages.yml` for automatic deploy from `main`
+
+In GitHub repository settings, set `Pages -> Source` to `GitHub Actions`.
+
 ## Fillout integration
 
 Set the Fillout form URL with an environment variable:
 
 ```bash
-NEXT_PUBLIC_FILLOUT_URL=https://forms.fillout.com/t/f61wqtPk4Nus
+NEXT_PUBLIC_FILLOUT_URL=https://forms.fillout.com/t/xxx123
 ```
 
 When users continue from the cart, the app redirects with query parameters:
