@@ -1,7 +1,9 @@
 import { formatCurrency } from "@/lib/format";
+import type { Locale } from "@/lib/i18n";
 import type { CartItem } from "@/lib/types";
 
 type CartDrawerProps = {
+  locale: Locale;
   isOpen: boolean;
   items: CartItem[];
   total: number;
@@ -12,6 +14,7 @@ type CartDrawerProps = {
 };
 
 export function CartDrawer({
+  locale,
   isOpen,
   items,
   total,
@@ -20,21 +23,44 @@ export function CartDrawer({
   onClear,
   onContinue
 }: CartDrawerProps) {
+  const copy =
+    locale === "de"
+      ? {
+          ariaLabel: "Warenkorb",
+          cart: "Warenkorb",
+          close: "Schließen",
+          empty: "Dein Warenkorb ist leer.",
+          remove: "Entfernen",
+          total: "Gesamt",
+          clear: "Warenkorb leeren",
+          continue: "Weiter zur Reservierung"
+        }
+      : {
+          ariaLabel: "Cart drawer",
+          cart: "Cart",
+          close: "Close",
+          empty: "Your cart is empty.",
+          remove: "Remove",
+          total: "Total",
+          clear: "Clear cart",
+          continue: "Continue to reservation"
+        };
+
   return (
     <>
       <div className={`backdrop ${isOpen ? "open" : ""}`} onClick={onClose} aria-hidden="true" />
 
-      <aside className={`cart-drawer ${isOpen ? "open" : ""}`} aria-label="Cart drawer">
+      <aside className={`cart-drawer ${isOpen ? "open" : ""}`} aria-label={copy.ariaLabel}>
         <div className="cart-header">
-          <h3>Cart</h3>
+          <h3>{copy.cart}</h3>
           <button type="button" onClick={onClose} className="ghost-button">
-            Close
+            {copy.close}
           </button>
         </div>
 
         {items.length === 0 ? (
           <div className="cart-empty">
-            <p>Your cart is empty.</p>
+            <p>{copy.empty}</p>
           </div>
         ) : (
           <ul className="cart-list">
@@ -45,7 +71,7 @@ export function CartDrawer({
                   <span>{formatCurrency(item.price, "EUR")}</span>
                 </div>
                 <button type="button" onClick={() => onRemove(item.id)}>
-                  Remove
+                  {copy.remove}
                 </button>
               </li>
             ))}
@@ -54,16 +80,16 @@ export function CartDrawer({
 
         <div className="cart-footer">
           <div className="cart-total">
-            <span>Total</span>
+            <span>{copy.total}</span>
             <strong>{formatCurrency(total, "EUR")}</strong>
           </div>
 
           <div className="cart-actions">
             <button type="button" className="ghost-button" onClick={onClear} disabled={items.length === 0}>
-              Clear cart
+              {copy.clear}
             </button>
             <button type="button" className="primary-button" onClick={onContinue} disabled={items.length === 0}>
-              Continue to reservation
+              {copy.continue}
             </button>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import type { CartItem } from "@/lib/types";
 
-export const DEFAULT_FILLOUT_URL = "https://form.fillout.com/t/XXXXX";
+export const DEFAULT_FILLOUT_URL = "https://forms.fillout.com/t/f61wqtPk4Nus";
 
 export function buildReservationUrl(baseUrl: string, cartItems: CartItem[]): string {
   const url = new URL(baseUrl);

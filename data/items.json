@@ -8,7 +8,9 @@
     "price": 25,
     "currency": "EUR",
     "status": "available",
-    "images": ["/images/item-placeholder.svg"]
+    "images": [
+      "/images/catalog/kinderzimmer.jpg"
+    ]
   },
   {
     "id": "vintage-wooden-armchair",
@@ -19,7 +21,9 @@
     "price": 20,
     "currency": "EUR",
     "status": "available",
-    "images": ["/images/item-placeholder.svg"]
+    "images": [
+      "/images/catalog/image1.png"
+    ]
   },
   {
     "id": "jysk-sofa-bed-nejede",
@@ -30,7 +34,9 @@
     "price": 150,
     "currency": "EUR",
     "status": "available",
-    "images": ["/images/item-placeholder.svg"],
+    "images": [
+      "/images/catalog/image2.png"
+    ],
     "sourceUrl": "https://jysk.de/wohnzimmer/schlafsofas/schlafsofa-nejede-stoff-hellgrau"
   },
   {
@@ -42,7 +48,9 @@
     "price": 75,
     "currency": "EUR",
     "status": "available",
-    "images": ["/images/item-placeholder.svg"],
+    "images": [
+      "/images/catalog/image3.png"
+    ],
     "sourceUrl": "https://jysk.de/esszimmer/esstische/esstisch-ringsted-o100-weiss"
   },
   {
@@ -54,7 +62,9 @@
     "price": 15,
     "currency": "EUR",
     "status": "available",
-    "images": ["/images/item-placeholder.svg"],
+    "images": [
+      "/images/catalog/image4.png"
+    ],
     "sourceUrl": "https://jysk.de/aufbewahrung/verschiedenes/beistellwagen-kanstrup-beige"
   },
   {
@@ -66,7 +76,9 @@
     "price": 15,
     "currency": "EUR",
     "status": "available",
-    "images": ["/images/item-placeholder.svg"]
+    "images": [
+      "/images/catalog/image5.png"
+    ]
   },
   {
     "id": "gorenje-washing-machine-wnhei74saps",
@@ -77,7 +89,9 @@
     "price": 150,
     "currency": "EUR",
     "status": "available",
-    "images": ["/images/item-placeholder.svg"],
+    "images": [
+      "/images/catalog/washingmachine.png"
+    ],
     "sourceUrl": "https://www.kaufland.de/product/433398320/"
   },
   {
@@ -89,7 +103,9 @@
     "price": 10,
     "currency": "EUR",
     "status": "available",
-    "images": ["/images/item-placeholder.svg"]
+    "images": [
+      "/images/catalog/bathroomstand.png"
+    ]
   },
   {
     "id": "shoe-rack-70cm",
@@ -100,7 +116,9 @@
     "price": 10,
     "currency": "EUR",
     "status": "available",
-    "images": ["/images/item-placeholder.svg"]
+    "images": [
+      "/images/catalog/image6.png"
+    ]
   },
   {
     "id": "clothes-drying-rack-folding",
@@ -111,7 +129,9 @@
     "price": 10,
     "currency": "EUR",
     "status": "available",
-    "images": ["/images/item-placeholder.svg"]
+    "images": [
+      "/images/catalog/image7.png"
+    ]
   },
   {
     "id": "ikea-slakt-bed-set",
@@ -122,7 +142,9 @@
     "price": 200,
     "currency": "EUR",
     "status": "available",
-    "images": ["/images/item-placeholder.svg"],
+    "images": [
+      "/images/catalog/image8.png"
+    ],
     "sourceUrl": "https://www.ikea.com/de/en/p/slaekt-bed-frame-with-underbed-and-storage-white-s89227731/"
   },
   {
@@ -134,7 +156,9 @@
     "price": 30,
     "currency": "EUR",
     "status": "available",
-    "images": ["/images/item-placeholder.svg"]
+    "images": [
+      "/images/catalog/image9.png"
+    ]
   },
   {
     "id": "aeg-hand-blender",
@@ -145,7 +169,9 @@
     "price": 20,
     "currency": "EUR",
     "status": "available",
-    "images": ["/images/item-placeholder.svg"],
+    "images": [
+      "/images/catalog/handblender.jpg"
+    ],
     "notes": "German listing mentions 25 EUR, English listing mentions 20 EUR."
   },
   {
@@ -157,7 +183,9 @@
     "price": 30,
     "currency": "EUR",
     "status": "available",
-    "images": ["/images/item-placeholder.svg"]
+    "images": [
+      "/images/catalog/image10.png"
+    ]
   },
   {
     "id": "desk-lamp-grey",
@@ -168,7 +196,9 @@
     "price": 5,
     "currency": "EUR",
     "status": "available",
-    "images": ["/images/item-placeholder.svg"]
+    "images": [
+      "/images/catalog/desklamp.png"
+    ]
   },
   {
     "id": "koenic-humidifier-khu25225",
@@ -179,7 +209,9 @@
     "price": 15,
     "currency": "EUR",
     "status": "available",
-    "images": ["/images/item-placeholder.svg"],
+    "images": [
+      "/images/catalog/image11.png"
+    ],
     "sourceUrl": "https://www.mediamarkt.de/de/product/_koenic-khu-25225-luftbefeuchter-weiss-25-watt-raumgrosse-20-m-2982520.html"
   },
   {
@@ -191,7 +223,9 @@
     "price": 30,
     "currency": "EUR",
     "status": "available",
-    "images": ["/images/item-placeholder.svg"],
+    "images": [
+      "/images/catalog/image12.png"
+    ],
     "sourceUrl": "https://jysk.co.uk/living-room/coffee-tables-side-tables/coffee-table-dokkedal-75x115-concrete-color"
   },
   {
@@ -203,7 +237,9 @@
     "price": 10,
     "currency": "EUR",
     "status": "available",
-    "images": ["/images/item-placeholder.svg"]
+    "images": [
+      "/images/catalog/image13.png"
+    ]
   },
   {
     "id": "ikea-bed-drawers-180x200",
@@ -214,7 +250,9 @@
     "price": 450,
     "currency": "EUR",
     "status": "available",
-    "images": ["/images/item-placeholder.svg"]
+    "images": [
+      "/images/catalog/ikeabed.png"
+    ]
   },
   {
     "id": "ikea-brimnes-bed-180x200",
@@ -225,7 +263,9 @@
     "price": 250,
     "currency": "EUR",
     "status": "available",
-    "images": ["/images/item-placeholder.svg"],
+    "images": [
+      "/images/catalog/image14.png"
+    ],
     "sourceUrl": "https://www.ikea.com/de/de/p/brimnes-bettgestell-mit-schubladen-weiss-leirsund-s39019664/"
   },
   {
@@ -237,7 +277,9 @@
     "price": 30,
     "currency": "EUR",
     "status": "available",
-    "images": ["/images/item-placeholder.svg"]
+    "images": [
+      "/images/catalog/image15.png"
+    ]
   },
   {
     "id": "metal-storage-shelf",
@@ -248,7 +290,9 @@
     "price": 10,
     "currency": "EUR",
     "status": "available",
-    "images": ["/images/item-placeholder.svg"],
+    "images": [
+      "/images/catalog/image16.png"
+    ],
     "notes": "From 10 EUR. Two new shelves available for 18 EUR each."
   },
   {
@@ -260,6 +304,8 @@
     "price": 5,
     "currency": "EUR",
     "status": "available",
-    "images": ["/images/item-placeholder.svg"]
+    "images": [
+      "/images/catalog/image17.png"
+    ]
   }
 ]

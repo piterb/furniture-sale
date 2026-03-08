@@ -1,0 +1,81 @@
+import { formatCurrency } from "@/lib/format";
+import type { Locale } from "@/lib/i18n";
+import type { CatalogItem } from "@/lib/types";
+
+import { StatusBadge } from "@/components/status-badge";
+
+type ItemDetailModalProps = {
+  locale: Locale;
+  item: CatalogItem | null;
+  isInCart: boolean;
+  onClose: () => void;
+  onAddToCart: (item: CatalogItem) => void;
+};
+
+export function ItemDetailModal({ locale, item, isInCart, onClose, onAddToCart }: ItemDetailModalProps) {
+  if (!item) {
+    return null;
+  }
+
+  const title = locale === "de" ? item.titleDe : item.title;
+  const description = locale === "de" ? item.descriptionDe : item.description;
+  const copy =
+    locale === "de"
+      ? {
+          close: "Schließen",
+          details: "Artikeldetail",
+          source: "Originalanzeige",
+          add: "In den Warenkorb",
+          added: "Hinzugefügt"
+        }
+      : {
+          close: "Close",
+          details: "Item details",
+          source: "Original listing",
+          add: "Add to cart",
+          added: "Added"
+        };
+
+  return (
+    <>
+      <div className="backdrop open" onClick={onClose} aria-hidden="true" />
+      <section className="item-detail-modal" aria-label={copy.details} role="dialog" aria-modal="true">
+        <div className="item-detail-head">
+          <h3>{title}</h3>
+          <button type="button" className="ghost-button" onClick={onClose}>
+            {copy.close}
+          </button>
+        </div>
+
+        <div className="item-detail-body">
+          <div className="item-detail-image-wrap">
+            <img src={item.images[0]} alt={title} className="item-detail-image" />
+          </div>
+
+          <div className="item-detail-content">
+            <StatusBadge status={item.status} locale={locale} />
+            <p>{description}</p>
+            <strong>{formatCurrency(item.price, item.currency)}</strong>
+
+            {item.notes ? <p className="item-note">{item.notes}</p> : null}
+
+            {item.sourceUrl ? (
+              <a href={item.sourceUrl} target="_blank" rel="noreferrer" className="detail-link">
+                {copy.source}
+              </a>
+            ) : null}
+
+            <button
+              type="button"
+              className="primary-button"
+              disabled={isInCart || item.status !== "available"}
+              onClick={() => onAddToCart(item)}
+            >
+              {isInCart ? copy.added : copy.add}
+            </button>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

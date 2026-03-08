@@ -29,7 +29,7 @@ The static output is generated under `out/`.
 Set the Fillout form URL with an environment variable:
 
 ```bash
-NEXT_PUBLIC_FILLOUT_URL=https://form.fillout.com/t/XXXXX
+NEXT_PUBLIC_FILLOUT_URL=https://forms.fillout.com/t/f61wqtPk4Nus
 ```
 
 When users continue from the cart, the app redirects with query parameters:
