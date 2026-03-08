@@ -12,6 +12,7 @@ export interface CatalogItem {
   images: string[];
   sourceUrl?: string;
   notes?: string;
+  hidden?: boolean;
 }
 
 export interface CartItem {

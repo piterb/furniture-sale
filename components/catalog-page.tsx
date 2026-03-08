@@ -47,6 +47,10 @@ export function CatalogPage({ items }: CatalogPageProps) {
     const normalizedQuery = query.trim().toLowerCase();
 
     const visibleItems = items.filter((item) => {
+      if (item.hidden) {
+        return false;
+      }
+
       const matchesStatus = statusFilter === "all" || item.status === statusFilter;
       if (!matchesStatus) {
         return false;

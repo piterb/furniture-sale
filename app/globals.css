@@ -216,6 +216,8 @@ select {
 .item-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+  align-items: stretch;
   gap: 1rem;
 }
 
@@ -226,8 +228,9 @@ select {
   background: var(--card);
   display: grid;
   grid-template-rows: auto 1fr;
+  height: 100%;
+  min-height: 520px;
   box-shadow: 0 8px 22px rgba(50, 27, 14, 0.09);
-  animation: rise-in 380ms ease both;
 }
 
 .item-image-wrap {
@@ -263,11 +266,13 @@ select {
   justify-content: space-between;
   align-items: flex-start;
   gap: 0.5rem;
+  min-height: 3.2rem;
 }
 
 .item-title-row h3 {
   margin: 0;
   font-size: 1.02rem;
+  line-height: 1.25;
 }
 
 .title-trigger {
@@ -278,6 +283,10 @@ select {
   color: inherit;
   text-align: left;
   cursor: pointer;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .item-title-de,
@@ -293,14 +302,19 @@ select {
 .item-description {
   font-size: 0.9rem;
   line-height: 1.4;
+  min-height: 3.9rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .item-meta-row {
-  margin-top: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 0.6rem;
+  min-height: 1.6rem;
 }
 
 .item-meta-row strong {
@@ -322,6 +336,14 @@ select {
   font-size: 0.75rem;
 }
 
+.item-note-slot {
+  min-height: 2.15rem;
+}
+
+.item-note-empty {
+  visibility: hidden;
+}
+
 .item-cta,
 .primary-button,
 .ghost-button {
@@ -333,6 +355,7 @@ select {
 }
 
 .item-cta {
+  width: 100%;
   margin-top: auto;
 }
 

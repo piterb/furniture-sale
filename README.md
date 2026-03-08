@@ -40,3 +40,13 @@ When users continue from the cart, the app redirects with query parameters:
 ## Data source
 
 Catalog data is in `data/items.json` and was normalized from the markdown/PDF catalog in `docs/`.
+
+### Temporarily hide an item
+
+If you want to keep an item in data but not show it in the catalog yet, set:
+
+```json
+"hidden": true
+```
+
+for that item in `data/items.json`.

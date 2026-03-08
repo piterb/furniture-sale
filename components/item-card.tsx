@@ -29,7 +29,7 @@ export function ItemCard({ locale, item, isInCart, onAddToCart, onOpenDetails }:
         };
 
   return (
-    <article className="item-card" style={{ animationDelay: `${(item.price % 11) * 35}ms` }}>
+    <article className="item-card">
       <button type="button" className="item-image-wrap detail-trigger" onClick={() => onOpenDetails(item)}>
         <img src={item.images[0]} alt={title} className="item-image" loading="lazy" />
       </button>
@@ -55,7 +55,15 @@ export function ItemCard({ locale, item, isInCart, onAddToCart, onOpenDetails }:
           ) : null}
         </div>
 
-        {item.notes ? <p className="item-note">{item.notes}</p> : null}
+        <div className="item-note-slot">
+          {item.notes ? (
+            <p className="item-note">{item.notes}</p>
+          ) : (
+            <p className="item-note item-note-empty" aria-hidden="true">
+              &nbsp;
+            </p>
+          )}
+        </div>
 
         <button
           type="button"
