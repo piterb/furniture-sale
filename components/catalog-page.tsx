@@ -10,6 +10,7 @@ import { Hero } from "@/components/hero";
 import { ItemDetailModal } from "@/components/item-detail-modal";
 import { ItemGrid } from "@/components/item-grid";
 import { useCart } from "@/hooks/use-cart";
+import { canAddToCart } from "@/lib/availability";
 import { LOCALE_STORAGE_KEY, detectBrowserLocale, type Locale } from "@/lib/i18n";
 import { DEFAULT_FILLOUT_URL, buildReservationUrl } from "@/lib/reservation";
 import type { CatalogItem } from "@/lib/types";
@@ -96,6 +97,10 @@ export function CatalogPage({ items }: CatalogPageProps) {
   }
 
   function handleAddToCart(item: CatalogItem) {
+    if (!canAddToCart(item)) {
+      return;
+    }
+
     addItem({
       id: item.id,
       title: `${item.title} / ${item.titleDe}`,

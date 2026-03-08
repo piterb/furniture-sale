@@ -12,6 +12,9 @@ export interface CatalogItem {
   images: string[];
   sourceUrl?: string;
   notes?: string;
+  availableAfter?: string;
+  highlight?: string;
+  highlightDe?: string;
   hidden?: boolean;
 }
 

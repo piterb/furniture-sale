@@ -59,3 +59,26 @@ If you want to keep an item in data but not show it in the catalog yet, set:
 ```
 
 for that item in `data/items.json`.
+
+### Delay availability until a date
+
+If an item should be shown but not purchasable yet, set:
+
+```json
+"availableAfter": "2026-04-15"
+```
+
+The item stays visible, shows a badge `Available after <date>`, and `Add to cart` is disabled until that date.
+
+Optional highlight shown under the item title while blocked:
+
+```json
+"highlight": "This item will be available from April 27. If you are interested, please write it in the note when sending the cart."
+```
+
+For bilingual projects, use both:
+
+```json
+"highlight": "EN text",
+"highlightDe": "DE text"
+```

@@ -309,6 +309,26 @@ select {
   overflow: hidden;
 }
 
+.item-highlight-slot {
+  min-height: 2.4rem;
+}
+
+.item-highlight {
+  margin: 0;
+  padding: 0.46rem 0.56rem;
+  border-radius: 0.55rem;
+  background: rgba(154, 107, 31, 0.15);
+  border: 1px solid rgba(154, 107, 31, 0.45);
+  color: #5a3c0d;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.item-highlight-empty {
+  visibility: hidden;
+}
+
 .item-meta-row {
   display: flex;
   justify-content: space-between;
@@ -386,6 +406,7 @@ select {
   border-radius: 999px;
   padding: 0.26rem 0.53rem;
   border: 1px solid transparent;
+  line-height: 1.2;
 }
 
 .status-available {
@@ -404,6 +425,14 @@ select {
   color: var(--off);
   border-color: rgba(120, 80, 69, 0.35);
   background: rgba(120, 80, 69, 0.09);
+}
+
+.status-scheduled {
+  color: #765212;
+  border-color: rgba(118, 82, 18, 0.35);
+  background: rgba(118, 82, 18, 0.1);
+  text-transform: none;
+  letter-spacing: 0.01em;
 }
 
 .empty-state {

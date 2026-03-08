@@ -2,6 +2,7 @@ import { formatCurrency } from "@/lib/format";
 import type { Locale } from "@/lib/i18n";
 import type { CatalogItem } from "@/lib/types";
 import { withBasePath } from "@/lib/assets";
+import { canAddToCart, isAvailableLater } from "@/lib/availability";
 
 import { StatusBadge } from "@/components/status-badge";
 
@@ -37,6 +38,10 @@ export function ItemDetailModal({ locale, item, isInCart, onClose, onAddToCart }
           added: "Added"
         };
 
+  const canAdd = canAddToCart(item);
+  const highlight = locale === "de" ? item.highlightDe || item.highlight : item.highlight || item.highlightDe;
+  const showHighlight = Boolean(highlight && isAvailableLater(item.availableAfter));
+
   return (
     <>
       <div className="backdrop open" onClick={onClose} aria-hidden="true" />
@@ -54,7 +59,8 @@ export function ItemDetailModal({ locale, item, isInCart, onClose, onAddToCart }
           </div>
 
           <div className="item-detail-content">
-            <StatusBadge status={item.status} locale={locale} />
+            {showHighlight ? <p className="item-highlight">{highlight}</p> : null}
+            <StatusBadge status={item.status} availableAfter={item.availableAfter} locale={locale} />
             <p>{description}</p>
             <strong>{formatCurrency(item.price, item.currency)}</strong>
 
@@ -69,7 +75,7 @@ export function ItemDetailModal({ locale, item, isInCart, onClose, onAddToCart }
             <button
               type="button"
               className="primary-button"
-              disabled={isInCart || item.status !== "available"}
+              disabled={isInCart || !canAdd}
               onClick={() => onAddToCart(item)}
             >
               {isInCart ? copy.added : copy.add}

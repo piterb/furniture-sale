@@ -2,6 +2,7 @@ import { formatCurrency } from "@/lib/format";
 import type { Locale } from "@/lib/i18n";
 import type { CatalogItem } from "@/lib/types";
 import { withBasePath } from "@/lib/assets";
+import { canAddToCart, isAvailableLater } from "@/lib/availability";
 
 import { StatusBadge } from "@/components/status-badge";
 
@@ -29,6 +30,10 @@ export function ItemCard({ locale, item, isInCart, onAddToCart, onOpenDetails }:
           added: "Added"
         };
 
+  const canAdd = canAddToCart(item);
+  const highlight = locale === "de" ? item.highlightDe || item.highlight : item.highlight || item.highlightDe;
+  const showHighlight = Boolean(highlight && isAvailableLater(item.availableAfter));
+
   return (
     <article className="item-card">
       <button type="button" className="item-image-wrap detail-trigger" onClick={() => onOpenDetails(item)}>
@@ -42,7 +47,17 @@ export function ItemCard({ locale, item, isInCart, onAddToCart, onOpenDetails }:
               {title}
             </button>
           </h3>
-          <StatusBadge status={item.status} locale={locale} />
+          <StatusBadge status={item.status} availableAfter={item.availableAfter} locale={locale} />
+        </div>
+
+        <div className="item-highlight-slot">
+          {showHighlight ? (
+            <p className="item-highlight">{highlight}</p>
+          ) : (
+            <p className="item-highlight item-highlight-empty" aria-hidden="true">
+              &nbsp;
+            </p>
+          )}
         </div>
 
         <p className="item-description">{description}</p>
@@ -69,7 +84,7 @@ export function ItemCard({ locale, item, isInCart, onAddToCart, onOpenDetails }:
         <button
           type="button"
           className="item-cta"
-          disabled={isInCart || item.status !== "available"}
+          disabled={isInCart || !canAdd}
           onClick={() => onAddToCart(item)}
         >
           {isInCart ? copy.added : copy.add}

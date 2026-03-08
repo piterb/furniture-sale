@@ -89,10 +89,13 @@
     "price": 150,
     "currency": "EUR",
     "status": "available",
+    "availableAfter": "2026-04-27",
     "images": [
       "/images/catalog/washingmachine.png"
     ],
-    "sourceUrl": "https://www.kaufland.de/product/433398320/"
+    "sourceUrl": "https://www.kaufland.de/product/433398320/",
+    "highlight": "This item will be available from April 27. If you are interested, please write it in the note when sending the cart.",
+    "highlightDe": "Dieser Artikel ist erst ab dem 27. April verfugbar. Wenn Sie Interesse haben, schreiben Sie das bitte in die Notiz beim Senden des Warenkorbs."
   },
   {
     "id": "bathroom-storage-shelf",
@@ -250,9 +253,12 @@
     "price": 450,
     "currency": "EUR",
     "status": "available",
+    "availableAfter": "2026-04-27",
     "images": [
       "/images/catalog/ikeabed.png"
-    ]
+    ],
+    "highlight": "This item will be available from April 27. If you are interested, please write it in the note when sending the cart.",
+    "highlightDe": "Dieser Artikel ist erst ab dem 27. April verfugbar. Wenn Sie Interesse haben, schreiben Sie das bitte in die Notiz beim Senden des Warenkorbs."
   },
   {
     "id": "ikea-brimnes-bed-180x200",
@@ -266,7 +272,10 @@
     "images": [
       "/images/catalog/image14.png"
     ],
-    "sourceUrl": "https://www.ikea.com/de/de/p/brimnes-bettgestell-mit-schubladen-weiss-leirsund-s39019664/"
+    "sourceUrl": "https://www.ikea.com/de/de/p/brimnes-bettgestell-mit-schubladen-weiss-leirsund-s39019664/",
+    "availableAfter": "2026-04-27",
+    "highlight": "This item will be available from April 27. If you are interested, please write it in the note when sending the cart.",
+    "highlightDe": "Dieser Artikel ist erst ab dem 27. April verfugbar. Wenn Sie Interesse haben, schreiben Sie das bitte in die Notiz beim Senden des Warenkorbs."
   },
   {
     "id": "wooden-chairs-set-of-4",
