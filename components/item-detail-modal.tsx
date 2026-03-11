@@ -3,6 +3,7 @@ import type { Locale } from "@/lib/i18n";
 import type { CatalogItem } from "@/lib/types";
 import { withBasePath } from "@/lib/assets";
 import { canAddToCart, isAvailableLater } from "@/lib/availability";
+import ReactMarkdown from "react-markdown";
 
 import { StatusBadge } from "@/components/status-badge";
 
@@ -61,7 +62,9 @@ export function ItemDetailModal({ locale, item, isInCart, onClose, onAddToCart }
           <div className="item-detail-content">
             {showHighlight ? <p className="item-highlight">{highlight}</p> : null}
             <StatusBadge status={item.status} availableAfter={item.availableAfter} locale={locale} />
-            <p>{description}</p>
+            <div className="item-detail-description">
+              <ReactMarkdown>{description}</ReactMarkdown>
+            </div>
             <strong>{formatCurrency(item.price, item.currency)}</strong>
 
             {item.notes ? <p className="item-note">{item.notes}</p> : null}

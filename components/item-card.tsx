@@ -2,7 +2,7 @@ import { formatCurrency } from "@/lib/format";
 import type { Locale } from "@/lib/i18n";
 import type { CatalogItem } from "@/lib/types";
 import { withBasePath } from "@/lib/assets";
-import { canAddToCart, isAvailableLater } from "@/lib/availability";
+import { canAddToCart } from "@/lib/availability";
 
 import { StatusBadge } from "@/components/status-badge";
 
@@ -21,18 +21,19 @@ export function ItemCard({ locale, item, isInCart, onAddToCart, onOpenDetails }:
     locale === "de"
       ? {
           originalListing: "Originalanzeige",
+          detail: "Detail",
           add: "In den Warenkorb",
           added: "Hinzugefügt"
         }
       : {
           originalListing: "Original listing",
+          detail: "Detail",
           add: "Add to cart",
           added: "Added"
         };
 
   const canAdd = canAddToCart(item);
-  const highlight = locale === "de" ? item.highlightDe || item.highlight : item.highlight || item.highlightDe;
-  const showHighlight = Boolean(highlight && isAvailableLater(item.availableAfter));
+  const descriptionPreview = toPreviewText(description, 130);
 
   return (
     <article className="item-card">
@@ -43,24 +44,24 @@ export function ItemCard({ locale, item, isInCart, onAddToCart, onOpenDetails }:
       <div className="item-content">
         <div className="item-title-row">
           <h3>
-            <button type="button" className="title-trigger" onClick={() => onOpenDetails(item)}>
+            <button type="button" className="title-trigger" onClick={() => onOpenDetails(item)} title={title}>
               {title}
             </button>
           </h3>
           <StatusBadge status={item.status} availableAfter={item.availableAfter} locale={locale} />
         </div>
 
-        <div className="item-highlight-slot">
-          {showHighlight ? (
-            <p className="item-highlight">{highlight}</p>
-          ) : (
-            <p className="item-highlight item-highlight-empty" aria-hidden="true">
-              &nbsp;
-            </p>
-          )}
-        </div>
-
-        <p className="item-description">{description}</p>
+        <p className="item-description">
+          {descriptionPreview.text}
+          {descriptionPreview.isTrimmed ? (
+            <>
+              {"... "}
+              <button type="button" className="detail-inline-link" onClick={() => onOpenDetails(item)}>
+                {copy.detail}
+              </button>
+            </>
+          ) : null}
+        </p>
 
         <div className="item-meta-row">
           <strong>{formatCurrency(item.price, item.currency)}</strong>
@@ -69,16 +70,6 @@ export function ItemCard({ locale, item, isInCart, onAddToCart, onOpenDetails }:
               {copy.originalListing}
             </a>
           ) : null}
-        </div>
-
-        <div className="item-note-slot">
-          {item.notes ? (
-            <p className="item-note">{item.notes}</p>
-          ) : (
-            <p className="item-note item-note-empty" aria-hidden="true">
-              &nbsp;
-            </p>
-          )}
         </div>
 
         <button
@@ -92,4 +83,21 @@ export function ItemCard({ locale, item, isInCart, onAddToCart, onOpenDetails }:
       </div>
     </article>
   );
+}
+
+function toPreviewText(markdown: string, maxChars: number) {
+  const flattened = markdown
+    .replace(/\[(.*?)\]\((.*?)\)/g, "$1")
+    .replace(/[*_`>#~-]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  if (flattened.length <= maxChars) {
+    return { text: flattened, isTrimmed: false };
+  }
+
+  const sliced = flattened.slice(0, maxChars).trimEnd();
+  const lastSpace = sliced.lastIndexOf(" ");
+  const shortened = lastSpace > 0 ? sliced.slice(0, lastSpace).trimEnd() : sliced;
+  return { text: shortened, isTrimmed: true };
 }

@@ -10,12 +10,12 @@ export function Hero({ locale }: HeroProps) {
       ? {
           kicker: "Umzugsverkauf",
           title: "Ausgewählte Möbel und Haushaltsartikel aus rauchfreiem, haustierfreiem Haushalt.",
-          text: "Nur Abholung. Lege gewünschte Artikel in den Warenkorb und sende dann deine Reservierungsanfrage über Fillout."
+          text: "Nur Abholung in Weeze. Lege gewünschte Artikel in den Warenkorb und sende dann deine Reservierungsanfrage über Fillout. Nach dem Absenden des Formulars warte bitte auf die Bestätigung von Ort und Uhrzeit der Abholung."
         }
       : {
           kicker: "Moving Sale",
           title: "Selected furniture and home essentials from a smoke-free, pet-free home.",
-          text: "Pickup only. Add the items you want to reserve and continue to the Fillout form to send your request."
+          text: "Pickup only in Weeze. Add the items you want to reserve and continue to the Fillout form to send your request. After submitting the form, please wait for confirmation of the pickup place and time."
         };
 
   return (
