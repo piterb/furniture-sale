@@ -5,7 +5,7 @@
     "titleDe": "Kinderzimmer Set",
     "description": "Set includes a rug, toy shelf and two foldable storage boxes. Sold only as a set.",
     "descriptionDe": "Set mit Teppich, Spielzeugregal und zwei faltbaren Aufbewahrungsboxen. Nur als komplettes Set.",
-    "price": 25,
+    "price": 20,
     "currency": "EUR",
     "status": "available",
     "images": [
@@ -23,6 +23,19 @@
     "status": "available",
     "images": [
       "/images/catalog/image1.png"
+    ]
+  },
+  {
+    "id": "vintage-armchair-woven-sides",
+    "title": "Vintage armchair",
+    "titleDe": "Vintage Sessel",
+    "description": "Selling a vintage wooden armchair with a comfortable upholstered seat and backrest. Elegant classic design perfect for a living room, reading corner or bedroom. Solid wooden frame with decorative woven sides. Condition: good. From a smoke-free and pet-free home. Selling due to moving. Pickup only, no shipping.",
+    "descriptionDe": "Ich verkaufe einen vintage Holzsessel mit bequem gepolsterter Sitzfläche und Rückenlehne. Elegantes klassisches Design, ideal für Wohnzimmer, Leseecke oder Schlafzimmer. Stabiler Holzrahmen mit dekorativen geflochtenen Seitenteilen. Zustand: gut. Aus einem rauchfreien und haustierfreien Haushalt. Verkauf wegen Umzug. Nur Abholung, kein Versand.",
+    "price": 15,
+    "currency": "EUR",
+    "status": "available",
+    "images": [
+      "/images/catalog/chair.png"
     ]
   },
   {
@@ -261,29 +274,12 @@
     "highlightDe": "Dieser Artikel ist erst ab dem 27. April verfugbar. Wenn Sie Interesse haben, schreiben Sie das bitte in die Notiz beim Senden des Warenkorbs."
   },
   {
-    "id": "ikea-brimnes-bed-180x200",
-    "title": "IKEA BRIMNES bed with drawers and mattresses",
-    "titleDe": "IKEA BRIMNES Bett mit Schubladen und Matratzen",
-    "description": "BRIMNES 180 x 200 cm bed with LEIRSUND slatted base and two mattresses.",
-    "descriptionDe": "BRIMNES Bett (180 x 200 cm) mit LEIRSUND Federholzrahmen und zwei Matratzen.",
-    "price": 250,
-    "currency": "EUR",
-    "status": "available",
-    "images": [
-      "/images/catalog/image14.png"
-    ],
-    "sourceUrl": "https://www.ikea.com/de/de/p/brimnes-bettgestell-mit-schubladen-weiss-leirsund-s39019664/",
-    "availableAfter": "2026-04-27",
-    "highlight": "This item will be available from April 27. If you are interested, please write it in the note when sending the cart.",
-    "highlightDe": "Dieser Artikel ist erst ab dem 27. April verfugbar. Wenn Sie Interesse haben, schreiben Sie das bitte in die Notiz beim Senden des Warenkorbs."
-  },
-  {
     "id": "wooden-chairs-set-of-4",
     "title": "Wooden chairs (set of 4)",
     "titleDe": "Holzstühle (4 Stück)",
     "description": "Set of four wooden chairs in good condition.",
     "descriptionDe": "Vier Holzstühle in gutem Zustand.",
-    "price": 30,
+    "price": 25,
     "currency": "EUR",
     "status": "available",
     "images": [
