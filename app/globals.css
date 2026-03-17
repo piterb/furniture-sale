@@ -234,6 +234,8 @@ select {
 }
 
 .item-image-wrap {
+  position: relative;
+  overflow: hidden;
   aspect-ratio: 16 / 11;
   padding: 0.35rem;
   background: #ffffff;
@@ -252,6 +254,55 @@ select {
   object-fit: contain;
   object-position: center;
   border-radius: 0.65rem;
+}
+
+.item-image-wrap--reserved .item-image,
+.item-image-wrap--sold .item-image,
+.item-detail-image-wrap--reserved .item-detail-image,
+.item-detail-image-wrap--sold .item-detail-image {
+  filter: saturate(0.7) brightness(0.88);
+}
+
+.item-image-strike {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  display: block;
+}
+
+.item-image-strike::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(30, 21, 16, 0.04), rgba(30, 21, 16, 0.18));
+}
+
+.item-image-strike span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 165%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 0;
+  transform: translate(-50%, -50%) rotate(-28deg);
+  color: #fffaf4;
+  font-size: clamp(0.88rem, 1.7vw, 1.15rem);
+  font-weight: 800;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: 0 1px 4px rgba(20, 12, 8, 0.28);
+  box-shadow: 0 8px 22px rgba(44, 27, 16, 0.24);
+}
+
+.item-image-strike--reserved span {
+  background: rgba(154, 107, 31, 0.92);
+}
+
+.item-image-strike--sold span {
+  background: rgba(120, 80, 69, 0.94);
 }
 
 .item-content {
@@ -530,6 +581,8 @@ select {
 }
 
 .item-detail-image-wrap {
+  position: relative;
+  overflow: hidden;
   background: #fff;
   border: 1px solid rgba(80, 54, 37, 0.15);
   border-radius: 0.85rem;

@@ -34,11 +34,29 @@ export function ItemCard({ locale, item, isInCart, onAddToCart, onOpenDetails }:
 
   const canAdd = canAddToCart(item);
   const descriptionPreview = toPreviewText(description, 130);
+  const showImageStrike = item.status === "reserved" || item.status === "sold";
+  const imageStatusLabel =
+    locale === "de"
+      ? item.status === "reserved"
+        ? "Reserviert"
+        : "Verkauft"
+      : item.status === "reserved"
+        ? "Reserved"
+        : "Sold";
 
   return (
     <article className="item-card">
-      <button type="button" className="item-image-wrap detail-trigger" onClick={() => onOpenDetails(item)}>
+      <button
+        type="button"
+        className={`item-image-wrap detail-trigger${showImageStrike ? ` item-image-wrap--${item.status}` : ""}`}
+        onClick={() => onOpenDetails(item)}
+      >
         <img src={withBasePath(item.images[0])} alt={title} className="item-image" loading="lazy" />
+        {showImageStrike ? (
+          <span className={`item-image-strike item-image-strike--${item.status}`} aria-hidden="true">
+            <span>{imageStatusLabel}</span>
+          </span>
+        ) : null}
       </button>
 
       <div className="item-content">

@@ -42,6 +42,15 @@ export function ItemDetailModal({ locale, item, isInCart, onClose, onAddToCart }
   const canAdd = canAddToCart(item);
   const highlight = locale === "de" ? item.highlightDe || item.highlight : item.highlight || item.highlightDe;
   const showHighlight = Boolean(highlight && isAvailableLater(item.availableAfter));
+  const showImageStrike = item.status === "reserved" || item.status === "sold";
+  const imageStatusLabel =
+    locale === "de"
+      ? item.status === "reserved"
+        ? "Reserviert"
+        : "Verkauft"
+      : item.status === "reserved"
+        ? "Reserved"
+        : "Sold";
 
   return (
     <>
@@ -55,8 +64,13 @@ export function ItemDetailModal({ locale, item, isInCart, onClose, onAddToCart }
         </div>
 
         <div className="item-detail-body">
-          <div className="item-detail-image-wrap">
+          <div className={`item-detail-image-wrap${showImageStrike ? ` item-detail-image-wrap--${item.status}` : ""}`}>
             <img src={withBasePath(item.images[0])} alt={title} className="item-detail-image" />
+            {showImageStrike ? (
+              <span className={`item-image-strike item-image-strike--${item.status}`} aria-hidden="true">
+                <span>{imageStatusLabel}</span>
+              </span>
+            ) : null}
           </div>
 
           <div className="item-detail-content">
