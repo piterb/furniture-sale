@@ -711,6 +711,61 @@ select {
   gap: 0.5rem;
 }
 
+.contact-block {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(85, 53, 34, 0.12);
+}
+
+.contact-toggle {
+  cursor: pointer;
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  user-select: none;
+  background: var(--accent);
+  color: #fff5ec;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.65rem 1.1rem;
+  border-radius: 0.7rem;
+  transition: background 170ms ease, transform 170ms ease;
+}
+
+.contact-toggle:hover {
+  background: var(--accent-strong);
+  transform: translateY(-1px);
+}
+
+.contact-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.contact-toggle::after {
+  content: "↓";
+  font-size: 0.85rem;
+  transition: transform 200ms ease;
+}
+
+details[open] .contact-toggle::after {
+  transform: rotate(180deg);
+}
+
+.contact-sub {
+  margin: 0.85rem 0 0 !important;
+  font-size: 0.85rem !important;
+  color: var(--muted);
+}
+
+.contact-iframe {
+  display: block;
+  margin-top: 0.85rem;
+  border: none;
+  border-radius: 0.85rem;
+  width: 100%;
+}
+
 .footer {
   margin-top: 2rem;
   padding-top: 1.2rem;
