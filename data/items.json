@@ -131,7 +131,7 @@
     "descriptionDe": "Ich verkaufe ein **Schuhregal** in gutem Zustand.\n\nPreis: **10€**\n\nDetails:\n\n* Praktisches **Schuhregal**  \n* Ideal für **Flur oder Eingangsbereich**\n\nMaße:\n\n* Breite: **70 cm**  \n* Tiefe: **31 cm**  \n* Höhe: **45 cm**\n\n**Aus einem rauchfreien und haustierfreien Haushalt.**  \n**Verkauf wegen Umzug.**\n\n**Nur Abholung, kein Versand.** 😊",
     "price": 10,
     "currency": "EUR",
-    "status": "available",
+    "status": "sold",
     "images": [
       "/images/catalog/image6.png"
     ]
